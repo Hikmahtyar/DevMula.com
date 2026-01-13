@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="id" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog & Edukasi | DevMula</title>
+    
+    <link rel="icon" type="image/png" href="../favicon.png">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="container nav-container">
+            <a href="../index.html" class="logo">
+                <i class="fas fa-code brand-icon"></i> DevMula<span class="dot">.</span>
+            </a>
+            <div class="nav-right">
+                <button id="theme-toggle" class="btn-icon"><i class="fas fa-moon"></i></button>
+                <a href="../index.html" class="btn btn-primary" style="padding: 8px 20px; font-size: 0.9rem;">
+                    <i class="fas fa-arrow-left"></i> 
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <section class="section-padding bg-alt" style="padding-top: 120px; padding-bottom: 40px;">
+        <div class="container text-center">
+            <h1 class="section-title" data-aos="fade-down">Pojok Edukasi</h1>
+            <p style="color: var(--text-muted);" data-aos="fade-up">Tips digital marketing & teknologi website untuk UMKM.</p>
+        </div>
+    </section>
+
+    <section class="section-padding">
+        <div class="container">
+            <div class="blog-grid">
+                
+                <article class="blog-card" data-aos="fade-up">
+                    <div class="blog-img">
+                        <img src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?w=600" alt="Bisnis Digital">
+                        <span class="blog-tag">Bisnis</span>
+                    </div>
+                    <div class="blog-content">
+                        <h3>5 Alasan UMKM Wajib Punya Website</h3>
+                        <p>Masih jualan cuma di Story WA? Simak kenapa website bikin omzet naik 2x lipat.</p>
+                        
+                        <div class="blog-detail" id="blog1">
+                            <hr style="margin: 15px 0; opacity: 0.3;">
+                            <p><strong>1. Kredibilitas:</strong> Orang lebih percaya bisnis dengan domain .com.</p>
+                            <p><strong>2. Buka 24 Jam:</strong> Toko tutup, website tetap jualan.</p>
+                            <p><strong>3. Hemat Brosur:</strong> Ganti info produk gratis kapan saja.</p>
+                            <p><strong>4. Jangkauan Luas:</strong> Bisa dapat pembeli dari luar kota via Google.</p>
+                        </div>
+                        
+                        <button onclick="toggleBlog('blog1', this)" class="btn-read-more">Baca Selengkapnya</button>
+                    </div>
+                </article>
+
+                <article class="blog-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="blog-img">
+                        <img src="https://images.unsplash.com/photo-1621839673705-6617adf9e890?w=600" alt="Coding HTML">
+                        <span class="blog-tag" style="background: #E34F26;">Teknologi</span>
+                    </div>
+                    <div class="blog-content">
+                        <h3>HTML: Pondasi Website Anti Lemot</h3>
+                        <p>Kenapa DevMula pakai coding manual (HTML) dan bukan template instan? Ini alasannya.</p>
+                        
+                        <div class="blog-detail" id="blog2">
+                            <hr style="margin: 15px 0; opacity: 0.3;">
+                            <p><strong>Ringan:</strong> Tidak ada kode sampah, loading ngebut.</p>
+                            <p><strong>Aman:</strong> Website statis HTML susah diretas hacker.</p>
+                            <p><strong>SEO Friendly:</strong> Google suka struktur kode yang rapi.</p>
+                        </div>
+                        
+                        <button onclick="toggleBlog('blog2', this)" class="btn-read-more">Baca Selengkapnya</button>
+                    </div>
+                </article>
+
+                <article class="blog-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="blog-img">
+                        <img src="https://images.unsplash.com/photo-1542038784456-1ea8e935640e?w=600" alt="Foto Produk">
+                        <span class="blog-tag" style="background: var(--primary);">Tips Foto</span>
+                    </div>
+                    <div class="blog-content">
+                        <h3>Tips Foto Produk Modal HP</h3>
+                        <p>Gak perlu kamera mahal. Cukup pakai cahaya matahari, foto produkmu layak tampil.</p>
+                        
+                        <div class="blog-detail" id="blog3">
+                            <hr style="margin: 15px 0; opacity: 0.3;">
+                            <p>1. Cari cahaya matahari pagi (jam 8-10).</p>
+                            <p>2. Pakai alas karton putih polos.</p>
+                            <p>3. Jangan di-zoom (mendekat saja).</p>
+                            <p>4. Edit brightness sedikit biar cerah.</p>
+                        </div>
+                        
+                        <button onclick="toggleBlog('blog3', this)" class="btn-read-more">Baca Selengkapnya</button>
+                    </div>
+                </article>
+
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container text-center">
+            <p>&copy; 2026 DevMula. <a href="../index.html" style="color: white;">Home</a></p>
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init();
+
+        // 1. FUNGSI BUKA TUTUP ARTIKEL
+        function toggleBlog(id, btn) {
+            const content = document.getElementById(id);
+            content.classList.toggle('active');
+
+            if (content.classList.contains('active')) {
+                btn.innerText = "Tutup Artikel";
+                btn.style.background = "var(--primary)";
+                btn.style.color = "white";
+            } else {
+                btn.innerText = "Baca Selengkapnya";
+                btn.style.background = "transparent";
+                btn.style.color = "var(--primary)";
+            }
+        }
+
+        // 2. DARK MODE LOGIC
+        const themeToggle = document.getElementById('theme-toggle');
+        const html = document.documentElement;
+        const icon = themeToggle.querySelector('i');
+
+        if(localStorage.getItem('theme') === 'dark') {
+            html.setAttribute('data-theme', 'dark');
+            icon.classList.replace('fa-moon', 'fa-sun');
+        }
+
+        themeToggle.addEventListener('click', () => {
+            if (html.getAttribute('data-theme') === 'light') {
+                html.setAttribute('data-theme', 'dark');
+                icon.classList.replace('fa-moon', 'fa-sun');
+                localStorage.setItem('theme', 'dark');
+            } else {
+                html.setAttribute('data-theme', 'light');
+                icon.classList.replace('fa-sun', 'fa-moon');
+                localStorage.setItem('theme', 'light');
+            }
+        });
+    </script>
+</body>
+</html>

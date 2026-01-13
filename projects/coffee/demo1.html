@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kopi Senja - Authentic Rustic Space</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <nav>
+        <div class="container nav-box">
+            <a href="#" class="logo">Kopi<span class="gold">Senja</span>.</a>
+            
+            <ul class="nav-links">
+                <li><a href="#home">Beranda</a></li>
+                <li><a href="#story">Cerita</a></li>
+                <li><a href="#menu">Menu Favorit</a></li>
+            </ul>
+
+            <div class="hamburger">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </nav>
+
+    <section id="home" class="hero">
+        <div class="hero-overlay"></div>
+        <div class="hero-content" data-aos="fade-up" data-aos-duration="1500">
+            <p class="tagline"><span class="typing"></span></p>
+            <h1>Secangkir Hangat<br>di Kala Senja</h1>
+            <p class="desc">Nikmati racikan kopi arabika lokal terbaik dengan suasana rustic yang menenangkan hati dan pikiran.</p>
+            <a href="#menu" class="btn-primary">Jelajahi Menu <i class="fas fa-arrow-down"></i></a>
+        </div>
+    </section>
+
+    <section id="story" class="section-padding">
+        <div class="container story-box">
+            <div class="story-img" data-aos="fade-right">
+                <img src="https://images.unsplash.com/photo-1497935586351-b67a49e012bf?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80" alt="Barista Craft">
+                <div class="img-frame"></div>
+            </div>
+            <div class="story-text" data-aos="fade-left">
+                <h2>Cerita di Balik Seduhan</h2>
+                <p>Bermula dari kecintaan pada kekayaan biji kopi nusantara, Kopi Senja hadir sebagai ruang untuk bercerita. Kami percaya setiap cangkir memiliki jiwanya sendiri.</p>
+                <div class="stats">
+                    <div class="stat-item" data-aos="zoom-in" data-aos-delay="100">
+                        <i class="fas fa-seedling"></i>
+                        <h3>100%</h3>
+                        <p>Single Origin Lokal</p>
+                    </div>
+                    <div class="stat-item" data-aos="zoom-in" data-aos-delay="200">
+                        <i class="fas fa-hand-holding-heart"></i>
+                        <h3>Manual</h3>
+                        <p>Artisan Brewing</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="menu" class="section-padding bg-paper">
+        <div class="container">
+            <div class="section-head text-center" data-aos="fade-up">
+                <h2>Menu Pilihan Kami</h2>
+                <p>Klik pada gambar untuk melihat detail racikan & tasting notes.</p>
+            </div>
+
+            <div class="menu-tabs" data-aos="fade-up" data-aos-delay="100">
+                <button class="tab-btn active" onclick="filterMenu('all')">Semua</button>
+                <button class="tab-btn" onclick="filterMenu('coffee')">Signature Coffee</button>
+                <button class="tab-btn" onclick="filterMenu('non')">Non-Coffee</button>
+                <button class="tab-btn" onclick="filterMenu('bites')">Light Bites</button>
+            </div>
+
+            <div class="menu-grid">
+                <div class="menu-item coffee" data-aos="zoom-in" onclick="showDetail('kopi1')">
+                    <div class="img-box">
+                        <img src="https://images.unsplash.com/photo-1541167760496-1628856ab772?auto=format&fit=crop&w=500&q=60" alt="Kopi Susu">
+                        <div class="click-indicator"><i class="fas fa-plus"></i> Lihat Detail</div>
+                    </div>
+                    <div class="menu-info">
+                        <div class="menu-head">
+                            <h3>Kopi Susu Senja</h3>
+                            <span class="price">25K</span>
+                        </div>
+                        <p class="short-desc">Espresso + Gula Aren + Susu Segar</p>
+                    </div>
+                </div>
+
+                <div class="menu-item coffee" data-aos="zoom-in" data-aos-delay="100" onclick="showDetail('kopi2')">
+                    <div class="img-box">
+                        <img src="https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?auto=format&fit=crop&w=500&q=60" alt="V60">
+                        <div class="click-indicator"><i class="fas fa-plus"></i> Lihat Detail</div>
+                    </div>
+                    <div class="menu-info">
+                        <div class="menu-head">
+                            <h3>V60 Arabika Gayo</h3>
+                            <span class="price">30K</span>
+                        </div>
+                        <p class="short-desc">Manual Brew, Fruity & Aromatic</p>
+                    </div>
+                </div>
+
+                <div class="menu-item non" data-aos="zoom-in" data-aos-delay="200" onclick="showDetail('non1')">
+                    <div class="img-box">
+                        <img src="https://images.unsplash.com/photo-1544787219-7f47ccb76574?auto=format&fit=crop&w=500&q=60" alt="Matcha">
+                        <div class="click-indicator"><i class="fas fa-plus"></i> Lihat Detail</div>
+                    </div>
+                    <div class="menu-info">
+                        <div class="menu-head">
+                            <h3>Pure Matcha Latte</h3>
+                            <span class="price">28K</span>
+                        </div>
+                        <p class="short-desc">Premium Matcha + Fresh Milk</p>
+                    </div>
+                </div>
+
+                <div class="menu-item bites" data-aos="zoom-in" onclick="showDetail('bites1')">
+                    <div class="img-box">
+                        <img src="https://images.unsplash.com/photo-1604382354936-07c5d9983bd3?auto=format&fit=crop&w=500&q=60" alt="Croissant">
+                        <div class="click-indicator"><i class="fas fa-plus"></i> Lihat Detail</div>
+                    </div>
+                    <div class="menu-info">
+                        <div class="menu-head">
+                            <h3>Butter Croissant</h3>
+                            <span class="price">22K</span>
+                        </div>
+                        <p class="short-desc">Renyah, gurih, dan buttery.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container text-center">
+            <h3>Kopi<span class="gold">Senja</span>.</h3>
+            <p>Authentic Rustic Space</p>
+            <div class="socials">
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-facebook"></i></a>
+            </div>
+            <p class="copyright">&copy; 2024 Kopi Senja Demo. Created by DevMula.</p>
+        </div>
+    </footer>
+
+    <div id="menuModal" class="modal-overlay">
+        <div class="modal-content-box">
+            <span class="close-btn" onclick="closeModal()">&times;</span>
+            <div class="modal-flex">
+                <div class="modal-img">
+                    <img id="modalImg" src="" alt="Detail Menu">
+                </div>
+                <div class="modal-desc">
+                    <h3 id="modalTitle">Nama Menu</h3>
+                    <span id="modalPrice" class="modal-price">00K</span>
+                    <hr class="divider-gold">
+                    <h4>Tasting Notes:</h4>
+                    <p id="modalLongDesc">Deskripsi...</p>
+                    <div class="ingredients-box">
+                        <i class="fas fa-info-circle gold"></i>
+                        <span id="modalIngredients">Komposisi...</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    
+    <script>
+        // 1. Matikan animasi AOS di Mobile agar loading cepat
+        AOS.init({
+            once: true,
+            duration: 1000,
+            disable: 'mobile' 
+        });
+
+        // 2. Efek Mengetik
+        var typed = new Typed('.typing', {
+            strings: ['Authentic & Rustic Space.', 'Teman Bercerita.', 'Seduhan Penuh Rasa.'],
+            typeSpeed: 80,
+            backSpeed: 40,
+            loop: true
+        });
+
+        // 3. LOGIKA HAMBURGER MENU (PERBAIKAN WARNA & KLIK)
+        const hamburger = document.querySelector('.hamburger');
+        const navMenu = document.querySelector('.nav-links');
+        const navIcon = hamburger.querySelector('i');
+
+        hamburger.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+            
+            // Logika Ganti Icon & Warna
+            if (navMenu.classList.contains('active')) {
+                // Saat Menu Terbuka (Background Putih)
+                navIcon.classList.remove('fa-bars');
+                navIcon.classList.add('fa-times');
+                hamburger.style.color = "#3E2723"; // Ubah tombol jadi Coklat Gelap
+            } else {
+                // Saat Menu Tertutup (Background Transparan/Hero)
+                navIcon.classList.remove('fa-times');
+                navIcon.classList.add('fa-bars');
+                hamburger.style.color = "white"; // Balikin tombol jadi Putih
+            }
+        });
+
+        // Tutup menu otomatis saat link diklik
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                navMenu.classList.remove('active');
+                navIcon.classList.remove('fa-times');
+                navIcon.classList.add('fa-bars');
+                hamburger.style.color = "white"; // Balikin putih
+            });
+        });
+
+        // --- FILTER & MODAL ---
+        function filterMenu(kategori) {
+            let items = document.querySelectorAll('.menu-item');
+            let buttons = document.querySelectorAll('.tab-btn');
+
+            items.forEach(item => {
+                if (kategori === 'all' || item.classList.contains(kategori)) {
+                    item.style.display = 'block';
+                    setTimeout(() => item.classList.add('show'), 10);
+                } else {
+                    item.classList.remove('show');
+                    setTimeout(() => item.style.display = 'none', 300);
+                }
+            });
+
+            buttons.forEach(btn => btn.classList.remove('active'));
+            event.target.classList.add('active');
+        }
+
+        const menuDB = {
+            'kopi1': {
+                img: 'https://images.unsplash.com/photo-1541167760496-1628856ab772?auto=format&fit=crop&w=800&q=80',
+                title: 'Kopi Susu Senja',
+                price: '25K',
+                desc: 'Racikan signature kami yang memadukan double ristretto dari biji House Blend dengan gula aren organik cair.',
+                ing: 'Double Ristretto, Susu Segar, Gula Aren.'
+            },
+            'kopi2': {
+                img: 'https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?auto=format&fit=crop&w=800&q=80',
+                title: 'V60 Arabika Gayo',
+                price: '30K',
+                desc: 'Diseduh manual menggunakan metode pour-over V60. Karakter rasa bright acidity dan floral.',
+                ing: '15gr Biji Arabika Gayo, Air Suhu 92°C.'
+            },
+            'non1': {
+                img: 'https://images.unsplash.com/photo-1544787219-7f47ccb76574?auto=format&fit=crop&w=800&q=80',
+                title: 'Pure Matcha Latte',
+                price: '28K',
+                desc: 'Menggunakan bubuk Matcha premium ceremonial grade impor dari Uji, Jepang.',
+                ing: 'Pure Matcha Powder, Fresh Milk.'
+            },
+            'bites1': {
+                img: 'https://images.unsplash.com/photo-1604382354936-07c5d9983bd3?auto=format&fit=crop&w=800&q=80',
+                title: 'Butter Croissant',
+                price: '22K',
+                desc: 'Croissant klasik Perancis yang dipanggang segar setiap pagi. Renyah dan buttery.',
+                ing: 'Tepung Terigu, AOP Butter, Ragi.'
+            }
+        };
+
+        const modal = document.getElementById('menuModal');
+
+        function showDetail(id) {
+            const data = menuDB[id];
+            if(data) {
+                document.getElementById('modalImg').src = data.img;
+                document.getElementById('modalTitle').innerText = data.title;
+                document.getElementById('modalPrice').innerText = data.price;
+                document.getElementById('modalLongDesc').innerHTML = data.desc; 
+                document.getElementById('modalIngredients').innerText = data.ing;
+                
+                modal.style.display = 'flex';
+                setTimeout(() => modal.classList.add('active'), 10);
+            }
+        }
+
+        function closeModal() {
+            modal.classList.remove('active');
+            setTimeout(() => modal.style.display = 'none', 300);
+        }
+
+        window.onclick = function(event) {
+            if (event.target == modal) closeModal();
+        }
+    </script>
+</body>
+</html>

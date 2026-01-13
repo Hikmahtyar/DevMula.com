@@ -1,0 +1,214 @@
+/* ================= SETUP RUSTIC ELEGANCE ================= */
+:root {
+    --primary: #8B5E3C;     /* Coklat Kayu Hangat */
+    --secondary: #C8A97E;   /* Emas/Krem Tua untuk aksen */
+    --dark: #3E2723;        /* Coklat Kopi Sangat Tua (pengganti hitam) */
+    --light-bg: #F5F1E8;    /* Krem terang untuk background kartu */
+    --glass: rgba(245, 241, 232, 0.85); /* Kaca yang lebih solid/krem */
+    --border-gold: 2px solid rgba(200, 169, 126, 0.5);
+    
+    /* Font baru yang lebih klasik */
+    --font-decor: 'Cinzel Decorative', cursive; 
+    --font-head: 'Playfair Display', serif;
+    --font-body: 'Lato', sans-serif;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+
+body { 
+    font-family: var(--font-body); 
+    color: var(--dark); 
+    overflow-x: hidden;
+    /* Background: Campuran gradien untuk efek kayu hangat */
+    background: 
+        radial-gradient(circle at center, rgba(255,255,255,0.1), rgba(0,0,0,0.4)), /* Vignette */
+        linear-gradient(to right, #A67B5B, #C9A68B, #A67B5B); /* Serat Kayu vertikal halus */
+    background-attachment: fixed; /* Agar background tetap saat scroll */
+}
+
+/* ================= ANIMASI ANGIN (PARTIKEL DEBU EMAS) ================= */
+#wind-container {
+    position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+    pointer-events: none; z-index: 0; overflow: hidden;
+}
+
+.wind-particle {
+    position: absolute; left: -10px; /* Mulai dari luar layar kiri */
+    background: var(--secondary); /* Warna partikel emas/krem */
+    border-radius: 50%;
+    box-shadow: 0 0 5px var(--secondary); /* Efek glowing sedikit */
+    animation-name: drift;
+    animation-timing-function: linear;
+    animation-fill-mode: forwards;
+}
+
+@keyframes drift {
+    0% {
+        transform: translateX(0) translateY(0);
+        opacity: 0;
+    }
+    10% { opacity: 1; }
+    90% { opacity: 1; }
+    100% {
+        transform: translateX(110vw) translateY(-20px); /* Bergerak jauh ke kanan dan sedikit ke atas */
+        opacity: 0;
+    }
+}
+
+/* ================= UTILS & GLASS EFFECT ================= */
+.container { max-width: 850px; margin: auto; padding: 0 25px; position: relative; z-index: 2; }
+.section-padding { padding: 90px 0; }
+.text-center { text-align: center; }
+
+/* KARTU KACA YANG LEBIH SOLID & HANGAT */
+.glass-card {
+    background: var(--glass);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 15px; /* Sudut sedikit lebih tegas */
+    padding: 50px 40px;
+    box-shadow: 
+        inset 0 0 20px rgba(139, 94, 60, 0.1), /* Inner shadow coklat */
+        0 15px 35px rgba(0,0,0,0.2); /* Drop shadow lebih tegas */
+    position: relative;
+}
+/* Tambahan border tipis emas di sekeliling kartu */
+.glass-card::after {
+    content: ''; position: absolute; top: 10px; left: 10px; right: 10px; bottom: 10px;
+    border: 1px solid var(--secondary); opacity: 0.3; pointer-events: none;
+}
+
+.section-title {
+    font-family: var(--font-head); font-size: 2.8rem; margin-bottom: 20px;
+    color: var(--primary); font-weight: 700; letter-spacing: 1px; text-transform: uppercase;
+}
+.intro-text { margin-bottom: 50px; color: var(--dark); font-weight: 400; }
+
+/* ================= MUSIC CONTROL (Gaya Klasik) ================= */
+#music-control {
+    position: fixed; bottom: 30px; left: 30px; z-index: 999;
+    width: 50px; height: 50px; border-radius: 50%;
+    background: var(--primary); color: var(--secondary);
+    display: flex; justify-content: center; align-items: center;
+    cursor: pointer; box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    border: 2px solid var(--secondary); transition: 0.3s; font-size: 1.2rem;
+}
+#music-control.playing { animation: spin-slow 8s linear infinite; }
+@keyframes spin-slow { 100% { transform: rotate(360deg); } }
+
+/* ================= HERO SECTION ================= */
+.hero {
+    min-height: 100vh;
+    /* Background Hero: Gambar Ballroom/Texture Kayu Gelap */
+    background: url('https://images.unsplash.com/photo-1519225421980-715cb0215aed?ixlib=rb-1.2.1&auto=format&fit=crop&w=1500&q=80') center center/cover;
+    display: flex; justify-content: center; align-items: center;
+    position: relative; text-align: center; padding: 20px;
+}
+/* Overlay coklat tua untuk kesan dramatis */
+.hero::before { content: ''; position: absolute; top:0; left:0; width:100%; height:100%; background: rgba(62, 39, 35, 0.6); }
+
+.hero-content { max-width: 650px; position: relative; border-color: var(--secondary); }
+
+/* Ornamen Sudut Klasik */
+.corner-ornament { position: absolute; font-size: 2.5rem; color: var(--secondary); }
+.top-left { top: 25px; left: 25px; }
+.top-right { top: 25px; right: 25px; transform: scaleX(-1); }
+
+.greeting { font-size: 1rem; letter-spacing: 3px; text-transform: uppercase; margin-bottom: 15px; color: var(--dark); font-weight: 600;}
+.couple-name { font-family: var(--font-decor); font-size: 4rem; color: var(--primary); line-height: 1.1; margin-bottom: 15px; text-shadow: 1px 1px 2px rgba(0,0,0,0.2); font-weight: 700;}
+.date { font-weight: 600; color: var(--dark); font-size: 1.2rem; letter-spacing: 2px; text-transform: uppercase;}
+.ornament-divider { margin: 25px 0; color: var(--secondary); font-size: 1rem; letter-spacing: 5px;}
+.quote { font-size: 1rem; font-style: italic; color: var(--dark); line-height: 1.8; font-family: var(--font-head);}
+
+.scroll-down { position: absolute; bottom: 30px; animation: bounce 3s infinite; color: var(--secondary); font-size: 1.5rem; }
+
+/* ================= COUPLE SECTION (BINGKAI KOSONG) ================= */
+.couple-wrap { display: flex; justify-content: center; align-items: flex-start; gap: 40px; margin-top: 40px; }
+.couple-card { flex: 1; text-align: center; padding: 40px 30px; }
+
+/* STYLE BINGKAI KOSONG */
+.empty-frame {
+    width: 180px; height: 240px; /* Ukuran Portrait */
+    margin: 0 auto 25px;
+    border: 8px solid var(--primary); /* Bingkai luar tebal */
+    outline: 2px solid var(--secondary); /* Aksen emas tipis */
+    outline-offset: -5px;
+    background: #e0d5c3; /* Warna kanvas kosong di dalam */
+    display: flex; justify-content: center; align-items: center;
+    box-shadow: inset 0 0 30px rgba(0,0,0,0.2); /* Bayangan dalam agar terlihat cekung */
+    position: relative;
+}
+/* Icon placeholder di dalam bingkai */
+.placeholder-icon {
+    font-size: 4rem; color: var(--primary); opacity: 0.2;
+}
+
+.couple-card h3 { font-family: var(--font-head); font-size: 1.8rem; color: var(--primary); margin-bottom: 8px; font-weight: 700;}
+.parent { font-size: 1rem; color: var(--dark); font-style: italic; }
+.love-icon { font-size: 2.5rem; color: var(--secondary); margin-top: 100px; opacity: 0.8; }
+
+/* ================= COUNTDOWN ================= */
+.timer-box h2 { font-family: var(--font-head); font-size: 2.2rem; color: var(--primary); margin-bottom: 30px; text-align: center; text-transform: uppercase; }
+#countdown { display: flex; justify-content: center; gap: 25px; }
+.time-box { width: 80px; display: flex; flex-direction: column; align-items: center; border: 2px solid var(--secondary); padding: 15px 0; }
+.time-box span { font-size: 2.5rem; font-family: var(--font-head); color: var(--primary); line-height: 1; font-weight: 700;}
+.time-box small { font-size: 0.75rem; color: var(--dark); text-transform: uppercase; letter-spacing: 1px; margin-top: 5px; font-weight: 600;}
+
+/* ================= EVENT GRID ================= */
+.event-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 35px; }
+.event-card { text-align: center; padding: 50px 30px; border-top: 5px solid var(--secondary);}
+.event-icon { font-size: 3rem; margin-bottom: 20px; color: var(--secondary); }
+.event-card h3 { font-family: var(--font-head); font-size: 2rem; color: var(--primary); margin-bottom: 25px; font-weight: 700;}
+.event-detail p { margin-bottom: 15px; color: var(--dark); display: flex; align-items: center; justify-content: center; gap: 10px; font-size: 1.1rem;}
+.event-detail i { color: var(--secondary); }
+.btn-loc {
+    display: inline-block; padding: 12px 35px; background: var(--primary); border: 2px solid var(--secondary);
+    color: var(--secondary); text-decoration: none; transition: 0.3s;
+    margin-top: 25px; font-size: 0.9rem; letter-spacing: 2px; text-transform: uppercase; font-weight: bold;
+}
+.btn-loc:hover { background: var(--secondary); color: var(--primary); border-color: var(--primary); }
+
+/* ================= RSVP FORM ================= */
+.rsvp-box { max-width: 600px; margin: auto; text-align: center; border-bottom: 5px solid var(--secondary); }
+.rsvp-box h2 { font-family: var(--font-head); color: var(--primary); margin-bottom: 15px; text-transform: uppercase; font-weight: 700;}
+.rsvp-form { margin-top: 35px; display: flex; flex-direction: column; gap: 20px; }
+.rsvp-form input, .rsvp-form select, .rsvp-form textarea {
+    padding: 18px; border: 2px solid var(--secondary); font-family: var(--font-body);
+    background: rgba(255,255,255,0.9); color: var(--dark); outline: none; transition: 0.3s;
+    font-size: 1rem;
+}
+.rsvp-form input:focus, .rsvp-form select:focus, .rsvp-form textarea:focus {
+    border-color: var(--primary); background: white;
+}
+.rsvp-form button {
+    padding: 20px; background: var(--primary); color: var(--secondary); border: 2px solid var(--secondary);
+    font-weight: bold; cursor: pointer; font-size: 1.1rem; transition: 0.3s; letter-spacing: 2px; text-transform: uppercase;
+}
+.rsvp-form button:hover { background: var(--secondary); color: var(--primary); border-color: var(--primary); }
+
+/* NAVBAR & FOOTER */
+.navbar {
+    position: fixed; top: 0; width: 100%; padding: 20px 40px;
+    display: flex; justify-content: space-between; align-items: center; z-index: 100;
+    background: rgba(62, 39, 35, 0.8); backdrop-filter: blur(5px); border-bottom: 2px solid var(--secondary);
+}
+.navbar .logo { font-weight: 700; font-size: 1.5rem; color: var(--secondary); font-family: var(--font-decor); }
+.btn-nav {
+    padding: 10px 25px; background: var(--secondary); color: var(--primary);
+    text-decoration: none; font-size: 0.9rem; font-weight: bold; transition: 0.3s; text-transform: uppercase;
+}
+.btn-nav:hover { background: var(--primary); color: var(--secondary); }
+
+footer { text-align: center; padding: 40px; font-size: 0.9rem; color: var(--primary); background: transparent; margin-top: 30px; letter-spacing: 1px; font-weight: 600;}
+
+/* HP RESPONSIVE */
+@media (max-width: 768px) {
+    .couple-name { font-size: 3.5rem; }
+    .couple-wrap { flex-direction: column; gap: 40px; align-items: center;}
+    .love-icon { margin-top: 20px; transform: rotate(90deg); }
+    .section-title { font-size: 2.2rem; }
+    .navbar { padding: 15px 20px; }
+    .empty-frame { width: 160px; height: 220px; }
+}

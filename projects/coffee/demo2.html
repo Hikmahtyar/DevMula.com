@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>URBAN BREW - Modern Coffee Culture</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <link rel="stylesheet" href="style2.css">
+</head>
+<body>
+
+    <nav id="navbar">
+        <div class="container nav-flex">
+            <a href="#" class="logo">URBAN<span class="dot">.</span>BREW</a>
+            
+            <ul class="nav-links desktop-menu">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#menu">Menu</a></li>
+                <li><a href="#location">Space</a></li>
+            </ul>
+
+            <div class="hamburger" onclick="toggleMobileMenu()">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </nav>
+
+    <div id="mobileMenu" class="mobile-menu-overlay">
+        <span class="close-menu" onclick="toggleMobileMenu()">&times;</span>
+        <ul class="mobile-links">
+            <li><a href="#home" onclick="toggleMobileMenu()">Home</a></li>
+            <li><a href="#menu" onclick="toggleMobileMenu()">Menu</a></li>
+            <li><a href="#location" onclick="toggleMobileMenu()">Space</a></li>
+        </ul>
+    </div>
+
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h5 data-aos="fade-down">Est. 2024 Jakarta</h5>
+            <h1 data-aos="zoom-in">FUEL FOR<br>THE HUSTLERS</h1>
+            <p data-aos="fade-up">Premium caffeine for your daily grind.</p>
+            <div class="hero-btns" data-aos="fade-up" data-aos-delay="200">
+                <a href="#menu" class="btn-primary">Explore Menu</a>
+            </div>
+        </div>
+        <div class="big-number">01</div>
+    </section>
+
+    <section id="menu" class="section-padding bg-dark">
+        <div class="container">
+            <div class="section-head">
+                <h2>Weekly Best Sellers</h2>
+                <div class="scroll-nav desktop-only">
+                    <button onclick="scrollMenu('left')"><i class="fas fa-arrow-left"></i></button>
+                    <button onclick="scrollMenu('right')"><i class="fas fa-arrow-right"></i></button>
+                </div>
+            </div>
+
+            <p class="swipe-hint mobile-only"><i class="fas fa-hand-pointer"></i> Geser untuk melihat menu</p>
+
+            <div class="menu-wrapper" id="menuWrapper">
+                <div class="menu-card" onclick="openDetail('citrus')">
+                    <div class="card-img">
+                        <img src="https://images.unsplash.com/photo-1572442388796-11668a67e53d?auto=format&fit=crop&w=600&q=80">
+                        <div class="badge">Cold</div>
+                        <div class="hover-eye"><i class="fas fa-eye"></i></div>
+                    </div>
+                    <div class="card-info">
+                        <h3>Iced Black Citrus</h3>
+                        <div class="card-bottom">
+                            <span class="price">35K</span>
+                            <span class="more-info">Details &rarr;</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="menu-card" onclick="openDetail('oat')">
+                    <div class="card-img">
+                        <img src="https://images.unsplash.com/photo-1570968915860-54d5c301fa9f?auto=format&fit=crop&w=600&q=80">
+                        <div class="badge hot">Hot</div>
+                        <div class="hover-eye"><i class="fas fa-eye"></i></div>
+                    </div>
+                    <div class="card-info">
+                        <h3>Oatmilk Latte</h3>
+                        <div class="card-bottom">
+                            <span class="price">42K</span>
+                            <span class="more-info">Details &rarr;</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="menu-card" onclick="openDetail('manual')">
+                    <div class="card-img">
+                        <img src="https://images.unsplash.com/photo-1521302080334-4bebac2763a6?auto=format&fit=crop&w=600&q=80">
+                        <div class="badge hot">Manual</div>
+                        <div class="hover-eye"><i class="fas fa-eye"></i></div>
+                    </div>
+                    <div class="card-info">
+                        <h3>Ethiopia Guji</h3>
+                        <div class="card-bottom">
+                            <span class="price">45K</span>
+                            <span class="more-info">Details &rarr;</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="menu-card" onclick="openDetail('matcha')">
+                    <div class="card-img">
+                        <img src="https://images.unsplash.com/photo-1579306194872-64d3b7bac4c2?auto=format&fit=crop&w=600&q=80">
+                        <div class="badge">Non-Coffee</div>
+                        <div class="hover-eye"><i class="fas fa-eye"></i></div>
+                    </div>
+                    <div class="card-info">
+                        <h3>Cake Choco</h3>
+                        <div class="card-bottom">
+                            <span class="price">38K</span>
+                            <span class="more-info">Details &rarr;</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="location" class="section-padding">
+        <div class="container layout-grid">
+            <div class="layout-text" data-aos="fade-right">
+                <div class="big-number dark">02</div>
+                <h2>The Space</h2>
+                <p>Designed for productivity. Fast internet, power everywhere.</p>
+                <ul class="facilities">
+                    <li><i class="fas fa-wifi"></i> 100 Mbps WiFi</li>
+                    <li><i class="fas fa-plug"></i> Power Outlet</li>
+                </ul>
+            </div>
+            <div class="layout-img" data-aos="fade-left">
+                <img src="https://images.unsplash.com/photo-1554118811-1e0d58224f24?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80">
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container footer-flex">
+            <div class="f-brand">
+                <h3>URBAN<span class="dot">.</span>BREW</h3>
+            </div>
+            <div class="f-links">
+                <a href="#">Instagram</a>
+                <a href="#">Maps</a>
+            </div>
+        </div>
+    </footer>
+
+    <div id="productModal" class="modal-overlay">
+        <div class="modal-box">
+            <span class="close-modal" onclick="closeDetail()">&times;</span>
+            
+            <div class="modal-content">
+                <div class="modal-img">
+                    <img id="mImg" src="" alt="Detail">
+                </div>
+                <div class="modal-text">
+                    <h4 class="modal-cat" id="mCat">CATEGORY</h4>
+                    <h2 id="mTitle">PRODUCT NAME</h2>
+                    <h3 id="mPrice" class="modal-price">00K</h3>
+                    <hr class="modal-line">
+                    <p id="mDesc" class="modal-desc">Description here...</p>
+                    <div class="flavor-profile">
+                        <h5>FLAVOR PROFILE</h5>
+                        <p id="mProfile">Notes here...</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init();
+
+        // 1. Navbar Scroll
+        window.addEventListener('scroll', function() {
+            const nav = document.getElementById('navbar');
+            if (window.scrollY > 50) nav.classList.add('scrolled');
+            else nav.classList.remove('scrolled');
+        });
+
+        // 2. Horizontal Scroll
+        const wrapper = document.getElementById('menuWrapper');
+        function scrollMenu(direction) {
+            if(direction === 'left') wrapper.scrollBy({ left: -300, behavior: 'smooth' });
+            else wrapper.scrollBy({ left: 300, behavior: 'smooth' });
+        }
+
+        // 3. Mobile Menu Toggle
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobileMenu');
+            menu.classList.toggle('active');
+        }
+
+        // 4. Data Menu
+        const menuDB = {
+            'citrus': {
+                img: 'https://images.unsplash.com/photo-1572442388796-11668a67e53d?auto=format&fit=crop&w=800&q=80',
+                cat: 'COLD BREW SERIES',
+                title: 'Iced Black Citrus',
+                price: '35K',
+                desc: 'Campuran menyegarkan antara Double Espresso house blend kami dengan perasan lemon segar.',
+                profile: 'Acidic, Bubbly, Sweet, Refreshing.'
+            },
+            'oat': {
+                img: 'https://images.unsplash.com/photo-1570968915860-54d5c301fa9f?auto=format&fit=crop&w=800&q=80',
+                cat: 'MILK BASED',
+                title: 'Oatmilk Latte',
+                price: '42K',
+                desc: 'Espresso kami berpadu sempurna dengan susu Oatside Barista Blend yang creamy.',
+                profile: 'Nutty, Creamy, Earthy, Smooth.'
+            },
+            'manual': {
+                img: 'https://images.unsplash.com/photo-1521302080334-4bebac2763a6?auto=format&fit=crop&w=800&q=80',
+                cat: 'MANUAL BREW',
+                title: 'Ethiopia Guji',
+                price: '45K',
+                desc: 'Diseduh manual dengan teknik V60 Pour Over. Biji kopi single origin dari Ethiopia.',
+                profile: 'Floral, Blueberry, Tea-like body.'
+            },
+            'matcha': {
+                img: 'https://images.unsplash.com/photo-1579306194872-64d3b7bac4c2?auto=format&fit=crop&w=800&q=80',
+                cat: 'FUSION',
+                title: 'Cake Choco',
+                price: '38K',
+                desc: 'Pertemuan dua dunia. Pure Choco dengan topping cream.',
+                profile: 'Umami, Bold, Grassy, Sweety.'
+            }
+        };
+
+        // 5. Modal Logic
+        const modal = document.getElementById('productModal');
+
+        function openDetail(id) {
+            const data = menuDB[id];
+            if(data) {
+                document.getElementById('mImg').src = data.img;
+                document.getElementById('mCat').innerText = data.cat;
+                document.getElementById('mTitle').innerText = data.title;
+                document.getElementById('mPrice').innerText = data.price;
+                document.getElementById('mDesc').innerText = data.desc;
+                document.getElementById('mProfile').innerText = data.profile;
+                
+                modal.style.display = 'flex';
+                setTimeout(() => modal.classList.add('active'), 10);
+            }
+        }
+
+        function closeDetail() {
+            modal.classList.remove('active');
+            setTimeout(() => modal.style.display = 'none', 300);
+        }
+
+        window.onclick = function(e) {
+            if(e.target == modal) closeDetail();
+        }
+    </script>
+</body>
+</html>

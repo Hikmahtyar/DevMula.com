@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Night Wash - Laundry 24 Jam</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <link rel="stylesheet" href="style2.css">
+</head>
+<body>
+
+    <nav>
+        <div class="container nav-box">
+            <a href="#" class="logo">
+                <i class="fas fa-moon text-yellow"></i> Night<span class="blue-text">Wash</span>
+            </a>
+            
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#services">Layanan</a></li>
+                <li><a href="#promo">Promo Malam</a></li>
+                <li><a href="#order" class="btn-nav">Pesan Antar</a></li>
+            </ul>
+
+            <div class="hamburger">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </nav>
+
+    <section id="home" class="hero">
+        <div class="stars"></div>
+
+        <div class="container hero-flex">
+            <div class="hero-text" data-aos="fade-right">
+                <div class="badge-night">🌙 Buka Sampai Malam</div>
+                <h1>Siang Sibuk Kerja?<br>Nyuci <span class="glow-text">Malam Aja!</span></h1>
+                <p>Layanan laundry khusus buat Bunda yang sibuk seharian. Kirim malam ini, besok pagi sudah wangi dan rapi siap pakai kerja/sekolah.</p>
+                
+                <div class="hero-btns">
+                    <a href="#order" class="btn-primary pulse">Order via WA</a>
+                    <a href="#services" class="btn-secondary">Cek Harga</a>
+                </div>
+            </div>
+
+            <div class="hero-img" data-aos="zoom-in">
+                <div class="interactive-logo-container">
+                    <div class="bubble glow b1"></div>
+                    <div class="bubble glow b2"></div>
+                    <div class="bubble glow b3"></div>
+                    
+                    <div class="laundry-basket">
+                        <i class="fas fa-shopping-basket basket-icon"></i>
+                        <i class="fas fa-tshirt clothes c1 neon-pink"></i>
+                        <i class="fas fa-socks clothes c2 neon-green"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <svg class="wave-bottom" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#0f172a" fill-opacity="1" d="M0,224L48,213.3C96,203,192,181,288,181.3C384,181,480,203,576,224C672,245,768,267,864,261.3C960,256,1056,224,1152,197.3C1248,171,1344,149,1392,138.7L1440,128L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>
+    </section>
+
+    <section id="services" class="section-padding bg-dark">
+        <div class="container">
+            <div class="section-head text-center" data-aos="fade-up">
+                <h2>Solusi Cucian Bunda</h2>
+                <p>Pilih paket yang paling pas buat kebutuhan rumah.</p>
+            </div>
+
+            <div class="grid-3">
+                <div class="card-night" data-aos="fade-up" data-aos-delay="100">
+                    <div class="icon-box ib-pink"><i class="fas fa-tshirt"></i></div>
+                    <h3>Cuci Komplit</h3>
+                    <p>Cuci, kering, setrika, lipat. Wangi Sakura Night yang menenangkan.</p>
+                </div>
+                <div class="card-night popular" data-aos="fade-up" data-aos-delay="200">
+                    <div class="tag-pop">Paling Laris</div>
+                    <div class="icon-box ib-blue"><i class="fas fa-stopwatch"></i></div>
+                    <h3>Express Malam</h3>
+                    <p>Antar malam ini (sebelum jam 9), besok jam 7 pagi sudah sampai rumah.</p>
+                </div>
+                <div class="card-night" data-aos="fade-up" data-aos-delay="300">
+                    <div class="icon-box ib-green"><i class="fas fa-shoe-prints"></i></div>
+                    <h3>Cuci Sepatu</h3>
+                    <p>Sepatu sekolah anak kotor? Kami bersihkan sampai kinclong lagi.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="order" class="section-padding">
+        <div class="container order-box">
+            <div class="order-img" data-aos="fade-right">
+                <i class="fas fa-truck-loading big-icon"></i>
+                <h3>Siap Jemput Ke Rumah</h3>
+                <p>Bunda istirahat saja, biar kurir kami yang ambil cucian kotornya. Gratis ongkir radius 3km!</p>
+            </div>
+
+            <div class="form-card-night" data-aos="fade-left">
+                <h3>Formulir Jemputan</h3>
+                <form onsubmit="kirimWAMalam(event)">
+                    <div class="form-group">
+                        <label>Nama Bunda</label>
+                        <input type="text" id="nightName" placeholder="Contoh: Bunda Ani">
+                    </div>
+                    <div class="form-group">
+                        <label>Mau Layanan Apa?</label>
+                        <select id="nightService">
+                            <option>Cuci Komplit (Kiloan)</option>
+                            <option>Express Malam (Satuan)</option>
+                            <option>Cuci Bedcover</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="btn-wa-night">
+                        <i class="fab fa-whatsapp"></i> Panggil Kurir Sekarang
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container text-center">
+            <p>&copy; 2024 Night Wash. Cucian Beres, Tidur Pulas.</p>
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        // Init AOS
+        AOS.init({ 
+            once: true,
+            disable: 'mobile' // Biar loading di HP cepat
+        });
+
+        // 1. LOGIKA TOMBOL GARIS TIGA (HAMBURGER)
+        const hamburger = document.querySelector('.hamburger');
+        const navMenu = document.querySelector('.nav-links');
+        const navIcon = hamburger.querySelector('i');
+
+        hamburger.addEventListener('click', () => {
+            // Toggle kelas 'active' untuk memunculkan menu
+            navMenu.classList.toggle('active');
+
+            // Ubah ikon garis jadi silang (X)
+            if(navMenu.classList.contains('active')) {
+                navIcon.classList.remove('fa-bars');
+                navIcon.classList.add('fa-times');
+            } else {
+                navIcon.classList.remove('fa-times');
+                navIcon.classList.add('fa-bars');
+            }
+        });
+
+        // Tutup menu saat link diklik
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                navMenu.classList.remove('active');
+                navIcon.classList.remove('fa-times');
+                navIcon.classList.add('fa-bars');
+            });
+        });
+
+        // 2. LOGIKA WA
+        function kirimWAMalam(e) {
+            e.preventDefault();
+            const nama = document.getElementById('nightName').value;
+            const layanan = document.getElementById('nightService').value;
+            const nomorWA = "6281234567890";
+            
+            const pesan = `Halo Night Wash! 🌙%0a%0aSaya *${nama}* mau order layanan *${layanan}*.%0aBisa jemput ke rumah sekarang? Terima kasih.`;
+            
+            window.open(`https://wa.me/${nomorWA}?text=${pesan}`, '_blank');
+        }
+    </script>
+</body>
+</html>

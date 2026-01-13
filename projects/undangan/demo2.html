@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Wedding of Dilan & Milea</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Lato:wght@300;400&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <link rel="stylesheet" href="style2.css">
+</head>
+<body>
+
+    <div id="wind-container"></div>
+
+    <audio id="lagu" loop>
+        <source src="" type="audio/mp3">
+    </audio>
+    <div id="music-control" onclick="toggleMusic()">
+        <i class="fas fa-compact-disc"></i>
+    </div>
+
+    <nav class="navbar">
+        <div class="logo">D & M</div>
+        <a href="#rsvp" class="btn-nav">Kirim Ucapan</a>
+    </nav>
+
+    <header class="hero">
+        <div class="corner-ornament top-left">⚜️</div>
+        <div class="corner-ornament top-right">⚜️</div>
+
+        <div class="glass-card hero-content" data-aos="zoom-in" data-aos-duration="2000">
+            <p class="greeting">The Wedding Celebration of</p>
+            <h1 class="couple-name">Dilan & Milea</h1>
+            <p class="date">Sabtu, 11 Februari 2014</p>
+            <div class="ornament-divider">♦ ♦ ♦</div>
+            <p class="quote">"Dan di antara tanda-tanda kekuasaan-Nya ialah Dia menciptakan untukmu istri-istri dari jenismu sendiri, supaya kamu cenderung dan merasa tenteram kepadanya."</p>
+        </div>
+        
+        <div class="scroll-down">
+            <i class="fas fa-chevron-down"></i>
+        </div>
+    </header>
+
+    <section class="section-padding couple">
+        <div class="container text-center">
+            <h2 class="section-title" data-aos="fade-up">Mempelai</h2>
+            <p class="intro-text" data-aos="fade-up">Dengan memohon rahmat Allah SWT, kami bermaksud menyelenggarakan pernikahan putra-putri kami:</p>
+            
+            <div class="couple-wrap">
+                <div class="couple-card glass-card" data-aos="fade-right" data-aos-duration="1500">
+                    <div class="empty-frame">
+                        <i class="fas fa-user-tie placeholder-icon"></i>
+                    </div>
+                    <h3>Dilan Ramadhan</h3>
+                    <p class="parent">Putra Bpk. Asep & Ibu Iis</p>
+                </div>
+
+                <div class="love-icon" data-aos="zoom-in" data-aos-delay="300">
+                    <i class="fas fa-ring"></i>
+                </div>
+
+                <div class="couple-card glass-card" data-aos="fade-left" data-aos-duration="1500">
+                     <div class="empty-frame">
+                        <i class="fas fa-user-vein placeholder-icon"></i>
+                    </div>
+                    <h3>Milea Adinda</h3>
+                    <p class="parent">Putri Bpk. Budi & Ibu Susi</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-padding">
+        <div class="container">
+            <div class="glass-card timer-box" data-aos="fade-up">
+                <h2>Menuju Hari Bahagia</h2>
+                <div id="countdown">
+                    <div class="time-box">
+                        <span id="days">00</span> <small>Hari</small>
+                    </div>
+                    <div class="time-box">
+                        <span id="hours">00</span> <small>Jam</small>
+                    </div>
+                    <div class="time-box">
+                        <span id="minutes">00</span> <small>Menit</small>
+                    </div>
+                    <div class="time-box">
+                        <span id="seconds">00</span> <small>Detik</small>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-padding">
+        <div class="container text-center">
+            <h2 class="section-title" data-aos="fade-up">Rangkaian Acara</h2>
+            
+            <div class="event-grid">
+                <div class="event-card glass-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="event-icon">🕊️</div>
+                    <h3>Akad Nikah</h3>
+                    <div class="event-detail">
+                        <p><i class="far fa-clock"></i> 08:00 - 10:00 WIB</p>
+                        <p><i class="fas fa-map-marker-alt"></i> Ballroom Hotel Mulia</p>
+                    </div>
+                    <a href="#" class="btn-loc">Lihat Peta</a>
+                </div>
+
+                <div class="event-card glass-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="event-icon">🎻</div>
+                    <h3>Resepsi</h3>
+                    <div class="event-detail">
+                        <p><i class="far fa-clock"></i> 11:00 - Selesai</p>
+                        <p><i class="fas fa-map-marker-alt"></i> Grand Ballroom</p>
+                    </div>
+                    <a href="#" class="btn-loc">Lihat Peta</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="rsvp" class="section-padding">
+        <div class="container">
+            <div class="glass-card rsvp-box" data-aos="fade-up">
+                <h2>Konfirmasi Kehadiran</h2>
+                <p>Merupakan kehormatan bagi kami atas kehadiran Anda.</p>
+                
+                <form class="rsvp-form">
+                    <input type="text" placeholder="Nama Lengkap">
+                    <select>
+                        <option>Akan Hadir</option>
+                        <option>Maaf, Tidak Bisa Hadir</option>
+                    </select>
+                    <textarea placeholder="Kirim Ucapan & Doa..."></textarea>
+                    <button type="button" onclick="alert('Simulasi: Ucapan Terkirim!')">Kirim Ucapan</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>Vintage Rustic Theme Demo by DevMula</p>
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        // Init AOS
+        AOS.init({
+            duration: 1200,
+            once: true
+        });
+
+        // 1. SCRIPT ANIMASI ANGIN (PARTIKEL DEBU EMAS)
+        function createWindParticle() {
+            const container = document.getElementById('wind-container');
+            const particle = document.createElement('div');
+            particle.classList.add('wind-particle');
+            
+            // Posisi vertikal random
+            particle.style.top = Math.random() * 100 + 'vh';
+            // Durasi bergerak dari kiri ke kanan (sangat lambat)
+            particle.style.animationDuration = Math.random() * 10 + 20 + 's'; // 20-30 detik
+            // Ukuran random
+            const size = Math.random() * 3 + 1 + 'px';
+            particle.style.width = size;
+            particle.style.height = size;
+            particle.style.opacity = Math.random() * 0.5 + 0.1;
+
+            container.appendChild(particle);
+
+            // Hapus setelah selesai animasi
+            setTimeout(() => { particle.remove(); }, 30000);
+        }
+        // Munculkan partikel setiap 800ms
+        setInterval(createWindParticle, 800);
+
+
+        // 2. MUSIK PLAYER
+        let isPlaying = false;
+        const audio = document.getElementById("lagu");
+        const btn = document.getElementById("music-control");
+
+        function toggleMusic() {
+            if(isPlaying) {
+                audio.pause();
+                btn.classList.remove("playing");
+                isPlaying = false;
+            } else {
+                audio.play();
+                btn.classList.add("playing");
+                isPlaying = true;
+            }
+        }
+
+        // 3. COUNTDOWN
+        const targetDate = new Date("Feb 11, 2013 08:00:00").getTime();
+        setInterval(() => {
+            const now = new Date().getTime();
+            const distance = targetDate - now;
+            document.getElementById("days").innerText = Math.floor(distance / (1000 * 60 * 60 * 24));
+            document.getElementById("hours").innerText = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            document.getElementById("minutes").innerText = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            document.getElementById("seconds").innerText = Math.floor((distance % (1000 * 60)) / 1000);
+        }, 1000);
+    </script>
+</body>
+</html>
